@@ -75,3 +75,55 @@ stringOne = "一生一次一双人"
 n = stringOne.count("一")
 print(f'"一"在字符串{stringOne}中出现的次数为{n}次.')
 print("="*36)
+
+"""
+    案例二十九 文本的标题样式
+
+"""
+print(f'{"文本的标题样式" :^30s}' + "\n")
+myString = "what should we do!"
+print(f'调用{myString.capitalize.__name__}方法后:{myString.capitalize()}')
+print(f'调用{myString.title.__name__}方法后:{myString.title()}')
+print("="*36)
+
+"""
+    案例三十 串联字符串
+
+"""
+print(f'{"串联字符串" :^30s}' + "\n")
+a = ('this','is','a','cat')
+print('|'.join(a))
+b = ['open','the','window']
+print('*'.join(b))
+print("="*36)
+
+"""
+    案例三十一 拆分字符串
+
+"""
+print(f'{"拆分字符串" :^30s}' + "\n")
+str = "123#456#789#001"
+print(f'以"#"为分隔符拆分后:{str.split("#",2)}')
+print(f'从右向左拆分二次:{str.rsplit("#",2)}')
+print("="*36)
+
+"""
+    案例三十一 替换字符串
+
+"""
+print(f'{"替换字符串" :^30s}' + "\n")
+str = "山高水长!"
+print(f'{str} --> {str.replace("水长","路远")}')
+str = "abc_abc_abc_abc_abc"
+print(f'{str} --> {str.replace("abc","xyz",2)}')
+print("="*36)
+
+"""
+    案例三十一 去掉字符串首尾的空格
+
+"""
+print(f'{"去掉字符串首尾的空格" :^30s}' + "\n")
+a = "       abcertd     "
+b = a.strip()
+print(f'处理前:\"{a}\"\n处理后:{b}')
+print("="*36)
