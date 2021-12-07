@@ -108,7 +108,7 @@ print(f'从右向左拆分二次:{str.rsplit("#",2)}')
 print("="*36)
 
 """
-    案例三十一 替换字符串
+    案例三十二 替换字符串
 
 """
 print(f'{"替换字符串" :^30s}' + "\n")
@@ -119,11 +119,37 @@ print(f'{str} --> {str.replace("abc","xyz",2)}')
 print("="*36)
 
 """
-    案例三十一 去掉字符串首尾的空格
+    案例三十三 去掉字符串首尾的空格
 
 """
 print(f'{"去掉字符串首尾的空格" :^30s}' + "\n")
 a = "       abcertd     "
 b = a.strip()
 print(f'处理前:\"{a}\"\n处理后:{b}')
+print("="*36)
+
+"""
+    案例三十四 lstrip 与 rstrip 方法
+
+"""
+print(f'{"lstrip 与 rstrip 方法" :^30s}' + "\n")
+str = "\t\t\tHello World!\t\t"
+print(f'处理前:{str},处理后:{str.lstrip()}')
+str = "Welcome      "
+print(f'处理前:{str},处理后:{str.rstrip()}')
+str = "   Go into action   "
+print(f'处理前:{str},处理后:{str.strip()}')
+print("="*36)
+
+"""
+    案例三十五 去除字符串收尾的特定字符
+
+"""
+print(f'{"去除字符串收尾的特定字符" :^30s}' + "\n")
+str = "======小标题======"
+print(f'{str}  -> {str.strip("=")}')
+str = "$$##$$  flash$$##"
+print(f'{str}  -> {str.lstrip("$# ")}')
+str = "www.youku.com"
+print(f'{str}  -> {str.lstrip("w.").rstrip(".com")}')
 print("="*36)
