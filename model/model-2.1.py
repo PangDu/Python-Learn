@@ -91,3 +91,20 @@ import model_2_1_43.test
 print("以下是test模块的帮助文档:\n")
 print(model_2_1_43.test.__doc__)
 print("="*36)
+
+"""
+        案例四十四 特殊的模块名称 --- __main__
+
+"""
+print(f'{"特殊的模块名称 --- __main__" :^30s}' + "\n")
+import model_2_1_44.demo
+print("="*36)
+
+"""
+        案例四十五 __file__与__cached__属性
+
+"""
+print(f'{"案例四十五 __file__与__cached__属性" :^30s}' + "\n")
+import model_2_1_45.demo
+model_2_1_45.demo.demo_address()
+print("="*36)
