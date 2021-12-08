@@ -42,3 +42,11 @@ membs = [k for k in dic.keys()]
 for name in membs:
         print(name)
 print("="*36)
+
+"""
+        案例五十 __main__.py文件的用途
+
+"""
+print(f'{"案例五十 __main__.py文件的用途" :^30s}' + "\n")
+print(f' 命令终端运行:python3 -m demo')
+print("="*36)
