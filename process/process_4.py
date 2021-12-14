@@ -138,4 +138,69 @@ print("="*36)
 
 """
 print(f'{"案例七十六 使用for循环" :^30s}' + "\n")
+import random
+x = 0
+numbers = []
+while x < 10:
+    numbers.append(random.random() * 100)
+    x += 1
+
+for n in numbers:
+    print(f' n = {n}')
+print("="*36)
+
+"""
+        案例七十七 for循环与range函数
+
+"""
+print(f'{"案例七十七 for循环与range函数" :^30s}' + "\n")
+for n in range(10):
+    print(n,end=' ')
+print('\n')
+for n in range(0,50,3):
+    print(n,end=' ')
+print('\n')
+for a in range(60,30,-5):
+    print(a,end=' ')
+print('\n')
+print("="*36)
+
+"""
+        案例七十八 组成每个数位均不同的三位数
+
+"""
+print(f'{"案例七十八 组成每个数位均不同的三位数" :^30s}' + "\n")
+results = []
+for a in range(1,9):
+    for b in range(1,9):
+        for c in range(1,9):
+            if a != b and b !=c and a != c:
+                results.append(a *100 + b *10 + c)
+c = 0
+for n in results:
+    c += 1
+    print(n,end = ' ')
+    if (c % 20) == 0:
+        print('\n')
+print('\n')
+print("="*36)
+
+"""
+        案例七十九 求"水仙花数"
+
+"""
+str =  '案例七十九 求' + '"水仙花数"'
+print(f'{str:^30s}' + "\n")
+nums = range(100,1000)
+result = []
+for n in nums:
+    a = n //100
+    b = n //10 % 10
+    c = n % 10
+
+    if n == (a ** 3 + b **3 + c**3):
+        result.append(n)
+for n in result:
+    print(n,end = ' ')
+print('\n')
 print("="*36)
