@@ -204,3 +204,135 @@ for n in result:
     print(n,end = ' ')
 print('\n')
 print("="*36)
+
+"""
+        案例八十 跳出循环
+
+"""
+print(f'{"案例八十 跳出循环" :^30s}' + "\n")
+from random import randint, sample
+samples = []
+for a in range(20):
+    samples.append(randint(100,10000))
+print(samples)
+for index,x in enumerate(samples):
+    if (x % 15) == 0:
+        print(f'找到一个可被15整除的数索引:{index} = {x}')
+        break
+
+print("="*36)
+
+"""
+        案例八十一 引发异常
+
+"""
+print(f'{"案例八十 跳出循环" :^30s}' + "\n")
+#raise Exception
+#raise RuntimeError from NameError
+#1/0
+print("="*36)
+
+"""
+        案例八十二 捕捉异常
+
+"""
+print(f'{"案例八十二 捕捉异常" :^30s}' + "\n")
+import sys
+try:
+    a = 1 / 0
+except:
+    ex = sys.exc_info()[1]
+    print(f'发生错误:{ex}\n')
+
+try:
+    raise RuntimeError('未知错误')
+except Exception as x:
+        print(f'异常类型:{x.__class__}')
+        print(f'异常信息: {x}')
+print("="*36)
+
+"""
+        案例八十三 异常处理中的清理代码
+
+"""
+print(f'{"案例八十三 异常处理中的清理代码" :^30s}' + "\n")
+try:
+    thefile = open('lines.txt',mode='w+t')
+    thefile.writelines(['line1\n','line2\n'])
+except Exception as ex:
+    print(f'错误: {ex}')
+finally:
+    if thefile:
+        thefile.close()
+        del thefile
+print("="*36)
+
+"""
+        案例八十四 else字句的作用
+
+"""
+print(f'{"案例八十四 else字句的作用" :^30s}' + "\n")
+from base64 import b16encode,b16decode, b64decode, b64encode
+text_data = "子丑寅卯辰已武威神油无害"
+try:
+    fobj = open('lines.txt', mode='wb')
+except Exception as ex:
+    print(ex)
+else:
+    data = text_data.encode(encoding= 'UTF-8')
+    b64data = b64encode(data)
+    fobj.write(b64data)
+finally:
+    if fobj:
+        fobj.close()
+        del fobj
+
+try:
+    fobj = open('lines.txt',mode='rb')
+except Exception as ex:
+    print(ex)
+else:
+    b_data = b64decode(fobj.read())
+    s = b_data.decode(encoding= 'UTF-8')
+    print(f'解码后的字符串:\n{s}')
+finally:
+    if fobj:
+        fobj.close()
+        del fobj
+print("="*36)
+
+"""
+        案例八十五 省略except子句
+
+"""
+print(f'{"案例八十五 省略except子句" :^30s}' + "\n")
+def test():
+    a = 0
+    try:
+        a = 1
+    finally:
+        a = 2
+    return a
+print(f' a = {test()}')
+print("="*36)
+
+"""
+        案例八十六 自定义异常类
+
+"""
+print(f'{"案例八十六 自定义异常类" :^30s}' + "\n")
+ex = Exception(123,'qwe',b'6e7f')
+print(ex.args)
+
+class custException(Exception):
+    def __init__(self, *args,message = None) -> None:
+        super().__init__(*args)
+        self.message = message
+
+try:
+    raise custException(6,7,message="未知错误")
+except custException as ex:
+    print(f'参数:{ex.args}')
+    print(f'异常信息:{ex.message}')
+
+print("="*36)
