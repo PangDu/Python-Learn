@@ -252,4 +252,41 @@ print("="*36)
 
 """
 print(f'{"案例一百零三 检查类型成员的存在性" :^30s}' + "\n")
+class test103:
+        def __init__(self,count):
+            self.count = count
+        
+        def __contains__(self,item):
+                if item in self.__class__.__dict__:
+                        return True
+                if item in self.__dict__:
+                        return True
+                return False
+        def work(self):
+                pass
+
+v = test103(3)
+v.label = "test"
+
+if 'work' in v:
+        print(f'此对象存在次方法')
+else:
+        print(f'未找到次方法')
+
+if 'label' in v:
+        print(f'存在此属性')
+else:
+        print(f'不存在此属性')
+
+if 'count' in v:
+        print(f'存在此属性')
+else:
+        print(f'不存在此属性')
+print("="*36)
+
+"""
+        案例一百零四 复合赋值运算符
+
+"""
+print(f'{"案例一百零四 复合赋值运算符" :^30s}' + "\n")
 print("="*36)
