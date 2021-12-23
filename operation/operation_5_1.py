@@ -301,6 +301,6 @@ print("="*36)
 """
 print(f'{"案例一百零五 三目运算符" :^30s}' + "\n")
 x = 888
-msg = "{0} {1}被5整除".format(x,'能' if x %5 == 0 else '不能')
+msg = "{0} {1} 被5整除".format(x,'能' if x %5 == 0 else '不能')
 print(msg)
 print("="*36)
