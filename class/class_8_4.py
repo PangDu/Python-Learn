@@ -302,5 +302,120 @@ print("="*36)
 
 """
 print(f'{"案例二百一十四 抽象类" :^30s}' + "\n")
+#定义的类需将ABCMeta类作为元类或ABC类派生(Abstract Base Class)
+#类成员使用abstractmethod装饰器
+#抽象类不能实例化,必须派生出子类并实现所有抽象成员;若部分抽象成员未实现,派生类不能实例化
+from abc import ABC,abstractmethod
+class Ball(ABC):
+        @abstractmethod
+        def play(self):
+                pass
+        @classmethod
+        @abstractmethod
+        def count(cls):
+                pass
+        @staticmethod
+        @abstractmethod
+        def teamMember():
+                pass
+
+class FootBall(Ball):
+        @classmethod
+        def count(cls):
+            print(' 梅西射进一球')
+        @staticmethod
+        def teamMember():
+            print(' 踢足球需要22个人')
+        def play(self):
+            print(' 踢足球')
+
+class BasetBall(Ball):
+        @classmethod
+        def count(cls):
+            print(' 科比上篮得分')
+        @staticmethod
+        def teamMember():
+            print(' 打篮球需要10个人')
+        def play(self):
+            print(' 打篮球')
+
+a = FootBall()
+a.play()
+a.count()
+FootBall.teamMember()
+
+b = BasetBall()
+b.play()
+b.count()
+BasetBall.teamMember()
+
+print("="*36)
+
+"""
+        案例二百一十五 虚拟子类
+
+"""
+print(f'{"案例二百一十五 虚拟子类" :^30s}' + "\n")
+#register()方法设置类的虚拟子类
+#虚拟子类并非从抽象类继承,只是实现了抽象类的抽象成员
+class Person(ABC):
+        @property
+        @abstractmethod
+        def ID(self):
+                return None
+        @ID.setter
+        @abstractmethod
+        def ID(self,id):
+                pass
+        @property
+        @abstractmethod
+        def Name(self):
+                return None
+        @Name.setter
+        @abstractmethod
+        def Name(self,name):
+                pass
+
+@Person.register
+class Sales:
+        def __init__(self,id = None,name = None):
+            self._id = id
+            self._name = name
+        @property
+        def ID(self):
+                return self._id
+        @ID.setter
+        def ID(self,id):
+                self._id = id
+        @property
+        def Name(self):
+                return self._name
+        @Name.setter
+        def Name(self,name):
+                self._name = name
+b = issubclass(Sales,Person)
+print(f' {Sales.__name__} {"是" if b else "不是"} {Person.__name__} 的子类')
+
+print("="*36)
+
+"""
+        案例二百一十六 获取类的直接子类
+
+"""
+print(f'{"案例二百一十六 获取类的直接子类" :^30s}' + "\n")
+
+class G:
+        pass
+class M(G):
+        pass
+class N(G):
+        pass
+class S(N):
+        pass
+
+subs = G.__subclasses__()
+print(' G类的直接子类:')
+for i in subs:
+        print(f' {i.__name__}')
 
 print("="*36)
