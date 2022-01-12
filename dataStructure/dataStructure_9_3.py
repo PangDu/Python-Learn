@@ -72,4 +72,42 @@ print("=" * 36)
 
 """
 print(f'{"案例二百四十三 合并字典" :^30s}' + "\n")
+from collections import ChainMap
+a = {
+        'item1':12,
+        'item2':'hello'
+}
+b = {
+        'progress1':1,
+        'progress2':2,
+        'progress3':3
+}
+c = {
+        'rid' : '005',
+        'title' : 'demo',
+        'var' : '1.0.1'
+}
+m = ChainMap(a,b,c)
+print('合并字典后的数据:')
+for k,v in m.items():
+        print(f' {k} : {v}')
+print("=" * 36)
+"""
+        案例二百四十四 计算器
+
+"""
+print(f'{"案例二百四十四 计算器" :^30s}' + "\n")
+from collections import Counter
+ns = 23,67,89,12,34,54,37,78,54
+c = Counter(ns)
+print(f' 23出现了{c[23]}次')
+x = c.most_common(2)
+a = x[0]
+print(f' x: {x} a: {a}')
+print(f' 出现次数最多的元素:{a[0]},出现了{a[1]}次')
+c = Counter({100: 3,888: 6,999: 8})
+t = c.elements()
+for e in t:
+        print(e,end=' ')
+print('\n')
 print("=" * 36)
