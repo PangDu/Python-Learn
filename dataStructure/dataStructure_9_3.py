@@ -59,5 +59,17 @@ print("=" * 36)
 
 """
 print(f'{"案例二百四十二 可以调整元素次序的字典" :^30s}' + "\n")
+from collections import OrderedDict
+mydict = OrderedDict(task1=1,task2=2,task3=3,task4=4)
+print(f' 原字典: {mydict}')
+mydict.move_to_end('task3',last=False)
+print(f' 更新后字典: {mydict}')
+mydict.move_to_end('task2')
+print(f' 更新后字典: {mydict}')
+print("=" * 36)
+"""
+        案例二百四十三 合并字典
 
+"""
+print(f'{"案例二百四十三 合并字典" :^30s}' + "\n")
 print("=" * 36)
