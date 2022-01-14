@@ -23,7 +23,6 @@ y = Shapes(2)
 print(f' x: {Shapes.CIRCLE}')
 print(f' y: {Shapes.TRIANGLE}')
 print("="*36)
-
 """
         案例二百五十三 只能使用int值得枚举
 
