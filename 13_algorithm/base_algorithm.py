@@ -9,6 +9,7 @@ print("------------插入排序------------")
 """
 # Python 性能分析
 import cProfile
+from operator import index
 list = [23,14,55,778,22,23,1,4]
 list_result = []
 print('------以下为直接插入排序结果------')
@@ -62,8 +63,29 @@ def binaryInsertionSort():
                     listBinary_result.insert(0,i)
             print(listBinary_result)
 cProfile.run('binaryInsertionSort()')
-
-
+# 希尔排序 Shell's Sort
+"""
+    1、希尔排序时间复杂度O(n^(1.3—2)) 
+    2、不稳定的排序算法
+    3、希尔排序的增量选择不能保证是最优的
+"""
+print('------以下为希尔排序结果------')
+shellList = [23,14,55,778,22,23,1,4]
+def shellSort():
+    index = int(len(shellList) / 2)
+    while index > 0:
+        for i in range(index,len(shellList)):
+            temp = shellList[i]
+            j = i - index
+            while j >= 0 and shellList[j] > temp:
+                shellList[j+index] = shellList[j]
+                j = j- index
+                shellList[j + index] = temp
+        index = int(index / 2)
+        print(shellList)
+    print('最终排序结果',shellList)
+cProfile.run('shellSort()')
+print("------------交换排序------------")
 # 冒泡排序
 def bubble_sort(alist):
     n = len(alist)
@@ -77,4 +99,4 @@ if __name__ == '__main__':
     print(f'排序前: {numList}')
     bubble_sort(numList)
     print(f'排序后: {numList}')
-#枚举算法
+# 快速排序
